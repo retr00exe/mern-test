@@ -18,7 +18,8 @@ const uri = process.env.ATLAS_URI;
 mongoose
  .connect(uri, {
      useNewUrlParser: true,
-     useCreateIndex: true
+     useCreateIndex: true,
+     useUnifiedTopology:true
  })
  .then(() => console.log(chalk.black.bgMagenta(`MongoDB connected ... \nHappy hacking Mekel ;)`)))
  .catch(error => console.log(error))
