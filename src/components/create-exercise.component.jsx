@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios'
 import "react-datepicker/dist/react-datepicker.css";
-import "./style.css"
 
 export default class CreateExercise extends Component {
 	constructor(props) {
@@ -69,15 +68,16 @@ export default class CreateExercise extends Component {
 			date: this.state.date
 		}
 		console.log(exercise);
-		axios.post('http://localhost:5000/exercises/add')
+		axios.post(`http://localhost:5000/exercises/add`, exercise)
 		 .then(res => console.log(res.data))
 		 .catch(err => console.log(`Error: ${err}`))
+		
 		window.location = '/'; //Balik ke root window
 	}
 
 	render() {
 		return(
-			<div id="create-exercise-body">
+			<div id="body">
 				<h3>Create New Exercise Log</h3>
 				<form onSubmit={this.onSubmit}>
 					<div className="form-group">

@@ -36,7 +36,7 @@ export default class CreateUsers extends Component {
 
     render() {
         return(
-            <div id="create-exercise-body">
+            <div id="body">
                 <h3>Create New User</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
